@@ -40,6 +40,14 @@
                                 <state key="normal" title="Результат">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resultButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igw-qQ-7mu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ты наслаждаешься жизнью уже ... дней" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-Zo-T40">
                                 <rect key="frame" x="74" y="551" width="266" height="43"/>
@@ -49,6 +57,9 @@
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-31-ZaB">
                                 <rect key="frame" x="47" y="245" width="320" height="216"/>
+                                <connections>
+                                    <action selector="datePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="SGR-TA-s9O"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,13 +71,20 @@
                             <constraint firstItem="VaB-ep-BLJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZuJ-DS-nmC"/>
                             <constraint firstItem="F33-Qt-H2G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="fKQ-ah-UA2"/>
                             <constraint firstItem="gh8-WH-jSF" firstAttribute="top" secondItem="MKs-31-ZaB" secondAttribute="bottom" constant="20" id="gcw-gt-OoD"/>
-                            <constraint firstItem="gh8-WH-jSF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hY5-4J-eXK"/>
+                            <constraint firstItem="gh8-WH-jSF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hY5-4J-eXK">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="corner" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="MKs-31-ZaB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="icT-cz-QjX"/>
                             <constraint firstItem="VaB-ep-BLJ" firstAttribute="top" secondItem="F33-Qt-H2G" secondAttribute="bottom" constant="30" id="nmf-Hq-VeZ"/>
                             <constraint firstItem="MKs-31-ZaB" firstAttribute="top" secondItem="VaB-ep-BLJ" secondAttribute="bottom" constant="30" id="sGN-68-zPs"/>
                             <constraint firstItem="nVe-Zo-T40" firstAttribute="top" secondItem="gh8-WH-jSF" secondAttribute="bottom" constant="20" id="trK-xh-w5R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="nVe-Zo-T40" id="hvD-Nz-L1v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
